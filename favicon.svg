@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Midnight Blue Background Square -->
+  <rect width="512" height="512" fill="#174A7E"/>
+
+  <!-- Geometric "TA" Monogram -->
+  <g stroke-linecap="square" stroke-linejoin="miter">
+    <!-- Slate Accent Shadow Lines -->
+    <path d="M 120 180 H 300 M 180 180 V 380 M 230 380 L 330 180 L 430 380 M 260 320 H 400" 
+          stroke="#7A8FA6" stroke-width="24" fill="none"/>
+    
+    <!-- Cream Main Monogram Lines -->
+    <path d="M 100 160 H 280 M 160 160 V 360 M 210 360 L 310 160 L 410 360 M 240 300 H 380" 
+          stroke="#FFBF00" stroke-width="24" fill="none"/>
+  </g>
+</svg>
