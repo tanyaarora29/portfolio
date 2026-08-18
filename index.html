@@ -137,7 +137,10 @@
   .alt-bg .contact .links a { background: #ffffff; }
 
 /* TESTIMONIALS */
-.testimonial-grid { display: grid; grid-template-columns: 1fr; max-width: 640px; margin: 0; gap: 22px; }
+ .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+ @media (max-width: 640px) {
+   .testimonial-grid { grid-template-columns: 1fr; }
+ }
 .testimonial-card { background: transparent; border-radius: 16px; padding: 28px; box-shadow: none; text-align: left; }
 .testimonial-card .t-quote { font-style: italic; color: #ffffff; font-size: 0.98rem; line-height: 1.65; margin-bottom: 18px; }
 .testimonial-card .t-meta {
@@ -199,14 +202,14 @@
   <p class="section-sub">Coming up next &mdash; we&#39;ll design this section together.</p>
 </section>
 <section class="alt-bg" id="testimonials">
-  <div class="inner">
-    <h2 class="section-title">Testimonials<span class="dot">.</span></h2>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <p class="t-quote">"Tanya is brilliant. She takes up new tasks and puts in enough rigor to get to the bottom of the problems. Her research skills and presentation skills are very good. She is very diligent and dependable. I have seen her work on different projects, where she was able to grasp new markets, understand the deliverables and contribute to the best of her abilities."</p>
-        <div class="t-author">Senior Manager</div>
-        <div class="t-role">EY-Parthenon</div>
-      </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p class="t-quote">"Tanya is brilliant. She takes up new tasks and puts in enough rigor to get to the bottom of the problems. Her research skills and presentation skills are very good. She is very diligent and dependable. I have seen her work on different projects, where she was able to grasp new markets, understand the deliverables and contribute to the best of her abilities."</p>
+      <div class="t-meta">Senior Manager, EY-Parthenon</div>
+    </div>
+    <div class="testimonial-card">
+      <p class="t-quote">"XX"</p>
+      <div class="t-meta">XX, XX</div>
     </div>
   </div>
 </section>
