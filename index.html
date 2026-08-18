@@ -135,26 +135,13 @@
   .alt-bg .section-sub { color: #eef2f6; }
   .alt-bg .contact .links a { background: #ffffff; }
 
-/* SKILLS TAGS */
- .skills-block { display: flex; flex-direction: column; gap: 32px; }
- .skill-heading { font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 14px; letter-spacing: 0.3px; }
- .skill-chips { display: flex; flex-wrap: wrap; gap: 10px; }
- .skill-chips span {
-   display: inline-block;
-   padding: 8px 20px;
-   border-radius: 30px;
-   font-size: 0.9rem;
-   font-weight: 600;
-   background: #ffffff;
-   color: var(--midnight);
-   border: 1px solid var(--cream);
-   transition: transform 0.2s, box-shadow 0.2s;
- }
- .skill-chips span:hover {
-   transform: translateY(-3px);
-   box-shadow: 0 6px 16px rgba(255,191,0,0.35);
- }
-
+/* TESTIMONIALS */
+.testimonial-grid { display: grid; grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; gap: 22px; }
+.testimonial-card { background: #ffffff; border-radius: 16px; padding: 28px; box-shadow: var(--shadow); position: relative; }
+.testimonial-card .t-quote { font-style: italic; color: var(--text); font-size: 0.98rem; line-height: 1.65; margin-bottom: 18px; }
+.testimonial-card .t-author { font-weight: 700; color: var(--midnight); font-size: 0.92rem; }
+.testimonial-card .t-role { color: var(--slate); font-size: 0.85rem; margin-top: 2px; }
+ 
 /* BANNER — full width */
 .hero-banner { width: 100%; max-width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #FFFDF5; }
 .hero-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
@@ -168,7 +155,7 @@
     <ul id="navlinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#hobbies">Hobbies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -202,34 +189,14 @@
   <h2 class="section-title">Projects<span class="dot">.</span></h2>
   <p class="section-sub">Coming up next &mdash; we&#39;ll design this section together.</p>
 </section>
-<section class="alt-bg" id="skills">
+<section class="alt-bg" id="testimonials">
   <div class="inner">
-    <h2 class="section-title">Skills<span class="dot">.</span></h2>
-    <p class="section-sub">Tools I work with and strengths I bring to the table.</p>
-
-    <div class="skills-block">
-      <div class="skill-category">
-        <h3 class="skill-heading">Technical Skills</h3>
-        <div class="skill-chips">
-          <span>Python</span>
-          <span>SQL</span>
-          <span>Excel</span>
-          <span>Power BI</span>
-          <span>Machine Learning</span>
-          <span>Statistics</span>
-          <span>Data Visualization</span>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3 class="skill-heading">Professional Skills</h3>
-        <div class="skill-chips">
-          <span>Analytical Thinking</span>
-          <span>Problem Solving</span>
-          <span>Communication</span>
-          <span>Stakeholder Management</span>
-          <span>Data Storytelling</span>
-        </div>
+    <h2 class="section-title">Testimonials<span class="dot">.</span></h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="t-quote">"Tanya is brilliant. She takes up new tasks and puts in enough rigor to get to the bottom of the problems. Her research skills and presentation skills are very good. She is very diligent and dependable. I have seen her work on different projects, where she was able to grasp new markets, understand the deliverables and contribute to the best of her abilities."</p>
+        <div class="t-author">Senior Manager</div>
+        <div class="t-role">EY-Parthenon</div>
       </div>
     </div>
   </div>
