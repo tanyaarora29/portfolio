@@ -39,8 +39,8 @@
   .section-title { font-size: 1.7rem; margin-bottom: 8px; letter-spacing: -0.5px; color: var(--heading); }
   .section-title .dot { color: var(--slate); }
   .section-sub { color: var(--muted); margin-bottom: 40px; }
-  .hero-banner { width: 100%; max-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #FFFDF5; }
-  .hero-banner img { width: 100%; max-width: 1100px; height: auto; display: block; }
+  .hero-banner { width: 100%; max-width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #FFFDF5; }
+  .hero-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
   .hero-intro { text-align: center; padding: 40px 24px 80px; background: var(--bg); border-bottom: 1px solid var(--line); }
   .photo { width: 200px; height: 200px; border-radius: 50%; margin: -140px auto 28px; position: relative; z-index: 2; background: var(--surface); border: 6px solid #ffffff; box-shadow: 0 16px 40px rgba(23,74,126,0.25); overflow: hidden; }
   .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
@@ -61,7 +61,7 @@
   .entry-text .e-org { color: var(--slate); font-size: 0.95rem; font-weight: 500; margin-top: 2px; }
   footer { text-align: center; padding: 40px 24px; color: #eef2f6; font-size: 0.85rem; border-top: 1px solid var(--line); background: var(--bg-alt); }
   .alt-bg { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: none; }
-  .alt-bg .inner { max-width: 1040px; margin: 0 auto; }
+  .alt-bg .inner { max-width: 1040px; margin: 0 auto; padding: 80px 24px; }
   .contact { text-align: center; }
   .contact .links { display: flex; gap: 18px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
   .contact .links a { padding: 14px 28px; border: 1px solid var(--line); border-radius: 30px; color: var(--text); font-size: 1.3rem; background: var(--surface); box-shadow: var(--shadow); transition: all 0.2s; }
@@ -71,7 +71,6 @@
     .menu-btn { display: block; }
     .hero-intro h1 { font-size: 2.3rem; }
     .hero-intro p.hero-sub { white-space: normal; font-size: 0.88rem; font-style: italic; }
-    .hero-banner { max-height: 180px; }
     .photo { width: 140px; height: 140px; margin-top: -95px; }
     nav ul.open { display: flex; flex-direction: column; position: absolute; top: 60px; right: 24px; background: var(--surface); padding: 18px 26px; border: 1px solid var(--line); border-radius: 14px; gap: 18px; box-shadow: var(--shadow); }
   }
@@ -193,6 +192,7 @@
 <section id="projects">
   <h2 class="section-title">Projects<span class="dot">.</span></h2>
   <p class="section-sub">Coming up next &mdash; we&#39;ll design this section together.</p>
+</section>
 <section class="alt-bg" id="skills">
   <div class="inner">
     <h2 class="section-title">Skills<span class="dot">.</span></h2>
