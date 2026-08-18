@@ -72,6 +72,7 @@
   .alt-bg { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: none; }
   .alt-bg .inner { max-width: 1040px; margin: 0 auto; padding: 60px 24px; }
   #contact .inner { padding: 30px 24px; }
+  #testimonials .inner { padding: 30px 24px; } 
   .contact { text-align: center; }
   .contact .links { display: flex; gap: 18px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
   .contact .links a { padding: 14px 28px; border: 1px solid var(--line); border-radius: 30px; color: var(--text); font-size: 1.3rem; background: var(--surface); box-shadow: var(--shadow); transition: all 0.2s; }
@@ -137,10 +138,21 @@
 
 /* TESTIMONIALS */
 .testimonial-grid { display: grid; grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; gap: 22px; }
-.testimonial-card { background: #ffffff; border-radius: 16px; padding: 28px; box-shadow: var(--shadow); position: relative; }
-.testimonial-card .t-quote { font-style: italic; color: var(--text); font-size: 0.98rem; line-height: 1.65; margin-bottom: 18px; }
-.testimonial-card .t-author { font-weight: 700; color: var(--midnight); font-size: 0.92rem; }
-.testimonial-card .t-role { color: var(--slate); font-size: 0.85rem; margin-top: 2px; }
+.testimonial-card { background: transparent; border-radius: 16px; padding: 28px; box-shadow: none; text-align: left; }
+.testimonial-card .t-quote { font-style: italic; color: #ffffff; font-size: 0.98rem; line-height: 1.65; margin-bottom: 18px; }
+.testimonial-card .t-author,
+.testimonial-card .t-role {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--midnight);
+  border: 1px solid var(--cream);
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 8px;
+  margin-top: 6px;
+}
  
 /* BANNER — full width */
 .hero-banner { width: 100%; max-width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #FFFDF5; }
