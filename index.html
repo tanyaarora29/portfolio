@@ -173,7 +173,7 @@
 .project-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 12px; }
 .project-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .project-topic { display: inline-block; font-size: 0.78rem; color: #ffffff; background: var(--bg-alt); padding: 4px 10px; border-radius: 12px; }
-.view-more-btn { display: inline-block; margin: 0 auto; padding: 14px 28px; background: var(--midnight); color: #ffffff; font-weight: 600; border-radius: 30px; font-size: 0.95rem; text-align: center; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; box-shadow: 0 8px 22px rgba(23,74,126,0.30); }
+.view-more-btn { display: block; margin: 20px auto 0; padding: 14px 28px; background: var(--midnight); color: #ffffff; font-weight: 600; border-radius: 30px; font-size: 0.95rem; text-align: center; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; box-shadow: 0 8px 22px rgba(23,74,126,0.30); width: fit-content; }
 .view-more-btn:hover { transform: translateY(-2px); background: var(--accent-soft); box-shadow: 0 12px 30px rgba(23,74,126,0.40); }
 
 @media (max-width: 640px) {
@@ -221,7 +221,6 @@
 </section>
 <section id="projects">
   <h2 class="section-title">Projects<span class="dot">.</span></h2>
-  <p class="section-sub">Work I'm proud of.</p>
   <div class="projects-grid">
     <div class="project-card" onclick="window.location.href='project-1-deck.html'">
       <div class="project-thumbnail"><img src="Project1/Slide1.JPG" alt="Project 1"></div>
