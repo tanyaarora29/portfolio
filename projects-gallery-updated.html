@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Tanya Arora</title>
+  <link rel="icon" type="image/png" sizes="625x625" href="./favicon-white.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --midnight: #174A7E;
+      --cream: #FFBF00;
+      --slate: #7A8FA6;
+      --bg: #FFFDF5;
+      --bg-alt: #7A8FA6;
+      --surface: #ffffff;
+      --text: #23364a;
+      --heading: #174A7E;
+      --muted: #7A8FA6;
+      --accent: #174A7E;
+      --accent-soft: #205fa3;
+      --line: #f0e3b8;
+      --shadow: 0 10px 30px rgba(23,74,126,0.08);
+    }
+    html { overflow-x: hidden; }
+    body { font-family: -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(255,253,245,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); box-shadow: 0 2px 12px rgba(23,74,126,0.05); }
+    nav { width: 100%; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+    nav .brand { font-weight: 700; font-size: 1.3rem; letter-spacing: 0.3px; color: var(--midnight); }
+    nav ul { display: flex; gap: 30px; list-style: none; }
+    nav ul a { color: var(--slate); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; position: relative; }
+    nav ul a::after { content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: var(--midnight); transition: width 0.25s; }
+    nav ul a:hover { color: var(--midnight); }
+    nav ul a:hover::after { width: 100%; }
+    .menu-btn { display: none; background: none; border: none; font-size: 1.6rem; color: var(--midnight); cursor: pointer; }
+    section { max-width: 1040px; margin: 0 auto; padding: 60px 24px; }
+    .section-title { font-size: 1.7rem; margin-bottom: 8px; letter-spacing: -0.5px; color: var(--heading); }
+    .section-title .dot { color: var(--slate); }
+    .section-sub { color: var(--muted); margin-bottom: 40px; }
+    footer { text-align: center; padding: 40px 24px; color: #eef2f6; font-size: 0.85rem; border-top: 1px solid var(--line); background: var(--bg-alt); }
+    .alt-bg { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: none; }
+    .alt-bg .inner { max-width: 1040px; margin: 0 auto; padding: 60px 24px; }
+    .contact { text-align: center; }
+    .contact .links { display: flex; gap: 18px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+    .contact .links a { padding: 14px 28px; border: 1px solid var(--line); border-radius: 30px; color: var(--text); font-size: 1.3rem; background: var(--surface); box-shadow: var(--shadow); transition: all 0.2s; }
+    .contact .links a:hover { border-color: var(--midnight); color: var(--midnight); transform: translateY(-2px); }
+    .alt-bg .section-title { color: #ffffff; }
+    .alt-bg .section-title .dot { color: var(--cream); }
+    .alt-bg .section-sub { color: #eef2f6; }
+    .alt-bg .contact .links a { background: #ffffff; }
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .menu-btn { display: block; }
+      nav ul.open { display: flex; flex-direction: column; position: absolute; top: 60px; right: 24px; background: var(--surface); padding: 18px 26px; border: 1px solid var(--line); border-radius: 14px; gap: 18px; box-shadow: var(--shadow); }
+    }
+    
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-bottom: 40px; }
+    .project-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); background: var(--surface); cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(23,74,126,0.16); }
+    .project-thumbnail { position: relative; width: 100%; height: 280px; overflow: hidden; background: #f0e3b8; }
+    .project-thumbnail img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .project-card:hover .project-thumbnail img { transform: scale(1.05); }
+    .project-info { padding: 24px; }
+    .project-title { font-size: 1.2rem; font-weight: 600; color: var(--heading); margin-bottom: 6px; transition: color 0.2s; }
+    .project-card:hover .project-title { color: var(--accent-soft); }
+    .project-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 12px; }
+    .project-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .project-topic { display: inline-block; font-size: 0.78rem; color: #ffffff; background: var(--bg-alt); padding: 4px 10px; border-radius: 12px; }
+    
+    @media (max-width: 640px) {
+      .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+      .project-thumbnail { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">Tanya Arora</div>
+      <button class="menu-btn" onclick="document.getElementById('navlinks').classList.toggle('open')">&#9776;</button>
+      <ul id="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2 class="section-title">Projects<span class="dot">.</span></h2>
+    <p class="section-sub">All projects I've worked on.</p>
+    <div class="projects-grid">
+      <div class="project-card" onclick="window.location.href='project-1-deck.html'">
+        <div class="project-thumbnail"><img src="Project1/Slide1.jpg" alt="Project 1"></div>
+        <div class="project-info">
+          <div class="project-title">Predicting Multilabel Categories using Computer Vision</div>
+          <p class="project-desc">Machine learning project combining vision and NLP techniques.</p>
+          <div class="project-topics">
+            <span class="project-topic">Python</span>
+            <span class="project-topic">Computer Vision</span>
+            <span class="project-topic">Deep Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="window.location.href='project-2-deck.html'">
+        <div class="project-thumbnail"><img src="Project2/Slide1.jpg" alt="Project 2"></div>
+        <div class="project-info">
+          <div class="project-title">Market Analysis Dashboard</div>
+          <p class="project-desc">Interactive data visualization for competitive market insights.</p>
+          <div class="project-topics">
+            <span class="project-topic">Tableau</span>
+            <span class="project-topic">SQL</span>
+            <span class="project-topic">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="window.location.href='project-3-deck.html'">
+        <div class="project-thumbnail"><img src="Project3/Slide1.jpg" alt="Project 3"></div>
+        <div class="project-info">
+          <div class="project-title">Student Performance Prediction Model</div>
+          <p class="project-desc">Statistical modeling to predict academic outcomes.</p>
+          <div class="project-topics">
+            <span class="project-topic">Machine Learning</span>
+            <span class="project-topic">Python</span>
+            <span class="project-topic">Statistics</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="window.location.href='project-4-deck.html'">
+        <div class="project-thumbnail"><img src="Project4/Slide1.jpg" alt="Project 4"></div>
+        <div class="project-info">
+          <div class="project-title">Financial Trend Analysis</div>
+          <p class="project-desc">Deep dive into financial patterns and forecasting.</p>
+          <div class="project-topics">
+            <span class="project-topic">Excel</span>
+            <span class="project-topic">Data Analysis</span>
+            <span class="project-topic">Business Insights</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="window.location.href='project-5-deck.html'">
+        <div class="project-thumbnail"><img src="Project5/Slide1.jpg" alt="Project 5"></div>
+        <div class="project-info">
+          <div class="project-title">Network Analysis Project</div>
+          <p class="project-desc">Graph analytics and network visualization techniques.</p>
+          <div class="project-topics">
+            <span class="project-topic">Python</span>
+            <span class="project-topic">Network Analysis</span>
+            <span class="project-topic">Visualization</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="window.location.href='project-6-deck.html'">
+        <div class="project-thumbnail"><img src="Project6/Slide1.jpg" alt="Project 6"></div>
+        <div class="project-info">
+          <div class="project-title">Sentiment Analysis Tool</div>
+          <p class="project-desc">NLP project analyzing customer feedback at scale.</p>
+          <div class="project-topics">
+            <span class="project-topic">NLP</span>
+            <span class="project-topic">Python</span>
+            <span class="project-topic">Text Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg" id="contact">
+    <div class="inner contact">
+      <h2 class="section-title">Let&#39;s Connect<span class="dot">.</span></h2>
+      <p class="section-sub">I am always open to interesting conversations and new opportunities.</p>
+      <div class="links">
+        <a href="mailto:tanya.arora.2025@mitb.smu.edu.sg"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/tanya29arora/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+  
+  <footer>&copy; 2026 Tanya Arora &middot; Designed and built with care</footer>
+</body>
+</html>
