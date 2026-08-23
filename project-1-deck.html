@@ -46,23 +46,39 @@
   
   @media (max-width: 640px) {
       .deck-container { height: auto; min-height: 100vh; flex-direction: column; }
-  
+
       .slides-wrapper {
         flex: none;
         position: relative;
         width: 100%;
         padding-top: 60px;
-        padding-bottom: 0;
+        padding-bottom: 12px;
         margin-bottom: 8px;
-        /* aspect-ratio will be set dynamically by JS below */
+        overflow: visible;
       }
-  
-      .slide { padding-top: 0; }
-      .slide img { max-width: 94%; max-height: 94%; }
-  
+
+      .slide {
+        position: static;   /* override the absolute positioning from base rules */
+        display: none;
+        width: 100%;
+        justify-content: center;
+        opacity: 1;         /* skip the fade transition on mobile, avoids flicker with static positioning */
+        transition: none;
+      }
+      .slide.active { display: flex; }
+
+      .slide img {
+        max-width: 100%;
+        max-height: 70vh;   /* cap so tall images don't push thumbnails off-screen */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
       .arrow-btn { width: 40px; height: 40px; font-size: 1.2rem; }
       .slide-counter { display: none; }
-  
+
       .thumbnail-strip { height: 80px; flex-shrink: 0; }
       .thumbnail { width: 65px; height: 65px; }
   }
@@ -131,29 +147,7 @@
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     let currentSlide = 0;
-    // Dynamically size the slide wrapper to match the real image aspect ratio
-    function setDynamicAspectRatio() {
-      if (window.innerWidth > 640) return; // only needed on mobile
-      const firstImg = slides[0].querySelector('img');
-      const wrapper = document.querySelector('.slides-wrapper');
-    
-      function applyRatio() {
-        if (firstImg.naturalWidth && firstImg.naturalHeight) {
-          wrapper.style.aspectRatio = `${firstImg.naturalWidth} / ${firstImg.naturalHeight}`;
-        }
-      }
-    
-      if (firstImg.complete) {
-        applyRatio();
-      } else {
-        firstImg.addEventListener('load', applyRatio);
-      }
-    }
-    
-    // Call after init
-    initThumbnails();
-    setDynamicAspectRatio();
-    window.addEventListener('resize', setDynamicAspectRatio);
+
     // Initialize thumbnails
     function initThumbnails() {
       const strip = document.getElementById('thumbnailStrip');
@@ -196,7 +190,7 @@
       if (e.key === 'ArrowLeft') previousSlide();
     });
 
-    // Initialize
+    // Initialize (called once)
     initThumbnails();
   </script>
 </body>
