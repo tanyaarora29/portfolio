@@ -45,16 +45,28 @@
   .thumbnail.active { border-color: var(--midnight); box-shadow: 0 4px 12px rgba(23,74,126,0.3); }
   
   @media (max-width: 640px) {
-      .deck-container { height: 100vh; flex-direction: column; }
-      .slides-wrapper { flex: 1; padding-top: 60px; padding-bottom: 8px; }
-      .slide { padding-top: 0; } /* remove duplicate padding */
+      .deck-container { height: auto; min-height: 100vh; flex-direction: column; }
+  
+      /* don't force this to fill leftover viewport height */
+      .slides-wrapper {
+        flex: none;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;   /* match your slide image's actual ratio — see note below */
+        padding-top: 60px;
+        padding-bottom: 0;
+        margin-bottom: 8px;
+      }
+  
+      .slide { padding-top: 0; }
+      .slide img { max-width: 94%; max-height: 94%; }
+  
       .arrow-btn { width: 40px; height: 40px; font-size: 1.2rem; }
-      .slide-counter { font-size: 0.9rem; top: 12px; right: 15px; }
-      .slide img { max-width: 92%; max-height: 92%; } /* fill the space instead of 55% */
+      .slide-counter { display: none; }
+  
       .thumbnail-strip { height: 80px; flex-shrink: 0; }
       .thumbnail { width: 65px; height: 65px; }
-      .slide-counter { display: none; }
-    }
+  }
 </style>
 </head>
 <body>
