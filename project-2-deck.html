@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P2- Tanya Arora</title>
+  <title>P1- Tanya Arora</title>
   <link rel="icon" type="image/png" sizes="625x625" href="./favicon-white.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +26,7 @@
   html { overflow-x: hidden; }
   body { font-family: -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%; }
   
-  .deck-container { position: relative; width: 100%; height: 100vh; display: flex; flex-direction: column; }
+  .deck-container { position: relative; width: 100%; height: 100vh; display: flex; flex-direction: column;}
   .slides-wrapper { position: relative; flex: 1; overflow: hidden; background: var(--bg); padding-top: 100px; padding-bottom: 20px; }
   .slide { position: absolute; inset: 0; display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.5s; }
   .slide.active { display: flex; opacity: 1; }
@@ -45,18 +45,49 @@
   .thumbnail.active { border-color: var(--midnight); box-shadow: 0 4px 12px rgba(23,74,126,0.3); }
   
   @media (max-width: 640px) {
-    .arrow-btn { width: 45px; height: 45px; font-size: 1.3rem; }
-    .slide-counter { font-size: 1rem; top: 15px; right: 20px; }
-    .slide img { max-width: 95%; max-height: 85%; }
-    .thumbnail-strip { height: 80px; }
-    .thumbnail { width: 70px; height: 70px; }
+      .deck-container { height: auto; min-height: 100vh; flex-direction: column; justify-content: center; padding-bottom: 12vh;}
+
+      .slides-wrapper {
+        flex: none;
+        position: relative;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 12px;
+        margin-bottom: 28px;
+        overflow: visible;
+      }
+
+      .slide {
+        position: static;   /* override the absolute positioning from base rules */
+        display: none;
+        width: 100%;
+        justify-content: center;
+        opacity: 1;         /* skip the fade transition on mobile, avoids flicker with static positioning */
+        transition: none;
+      }
+      .slide.active { display: flex; }
+
+      .slide img {
+        max-width: 100%;
+        max-height: 70vh;   /* cap so tall images don't push thumbnails off-screen */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
+      .arrow-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+      .slide-counter { display: none; }
+
+      .thumbnail-strip { height: 80px; flex-shrink: 0; }
+      .thumbnail { width: 65px; height: 65px; }
   }
 </style>
 </head>
 <body>
   <div class="deck-container">
-  <div style="position: absolute; top: 10px; left: 20px; z-index: 20;">
-  <a href="projects-gallery.html" style="display: inline-block; padding: 10px 18px; background: var(--midnight); color: #ffffff; border-radius: 6px; font-weight: 600; font-size: 0.85rem; transition: background 0.2s; cursor: pointer; text-decoration: none;">
+  <div style="position: absolute; top: 8px; left: 15px; z-index: 20;">
+  <a href="projects-gallery.html" style="display: inline-block; padding: 8px 14px; background: var(--midnight); color: #ffffff; border-radius: 6px; font-weight: 600; font-size: 0.75rem; transition: background 0.2s; cursor: pointer; text-decoration: none;">
     ← Back to Projects
   </a>
 </div>  
@@ -159,7 +190,7 @@
       if (e.key === 'ArrowLeft') previousSlide();
     });
 
-    // Initialize
+    // Initialize (called once)
     initThumbnails();
   </script>
 </body>
