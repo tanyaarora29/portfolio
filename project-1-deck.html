@@ -47,15 +47,14 @@
   @media (max-width: 640px) {
       .deck-container { height: auto; min-height: 100vh; flex-direction: column; }
   
-      /* don't force this to fill leftover viewport height */
       .slides-wrapper {
         flex: none;
         position: relative;
         width: 100%;
-        aspect-ratio: 4 / 3;   /* match your slide image's actual ratio — see note below */
         padding-top: 60px;
         padding-bottom: 0;
         margin-bottom: 8px;
+        /* aspect-ratio will be set dynamically by JS below */
       }
   
       .slide { padding-top: 0; }
@@ -132,7 +131,29 @@
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     let currentSlide = 0;
-
+    // Dynamically size the slide wrapper to match the real image aspect ratio
+    function setDynamicAspectRatio() {
+      if (window.innerWidth > 640) return; // only needed on mobile
+      const firstImg = slides[0].querySelector('img');
+      const wrapper = document.querySelector('.slides-wrapper');
+    
+      function applyRatio() {
+        if (firstImg.naturalWidth && firstImg.naturalHeight) {
+          wrapper.style.aspectRatio = `${firstImg.naturalWidth} / ${firstImg.naturalHeight}`;
+        }
+      }
+    
+      if (firstImg.complete) {
+        applyRatio();
+      } else {
+        firstImg.addEventListener('load', applyRatio);
+      }
+    }
+    
+    // Call after init
+    initThumbnails();
+    setDynamicAspectRatio();
+    window.addEventListener('resize', setDynamicAspectRatio);
     // Initialize thumbnails
     function initThumbnails() {
       const strip = document.getElementById('thumbnailStrip');
