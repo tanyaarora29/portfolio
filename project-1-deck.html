@@ -68,7 +68,7 @@
       .slide.active { display: flex; }
 
       .slide img {
-        max-width: 78%;
+        max-width: 100%;
         max-height: 70vh;   /* cap so tall images don't push thumbnails off-screen */
         width: auto;
         height: auto;
@@ -76,7 +76,8 @@
         margin: 0 auto;
       }
 
-      .nav-arrows { padding: 0 4px; }
+      .arrow-btn { background: transparent; box-shadow: none; color: var(--midnight); }
+      .arrow-btn:hover { background: rgba(23,74,126,0.1); }
 
       .arrow-btn { width: 40px; height: 40px; font-size: 1.2rem; }
       .slide-counter { display: none; }
