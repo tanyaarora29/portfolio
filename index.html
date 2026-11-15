@@ -234,11 +234,14 @@
   }
 @media (min-width: 641px) {
   .photo {
-    width: min(19vw, 400px);
-    height: min(19vw, 400px);
-    margin: calc(min(19vw, 400px) * -0.5) auto 28px;
+    width: min(19vw, 28vh, 400px);
+    height: min(19vw, 28vh, 400px);
+    margin: calc(min(19vw, 28vh, 400px) * -0.5) auto 16px;
   }
-  .hero-banner img { height: 20vw; max-height: 380px; object-fit: cover; object-position: center 30%; }
+  .hero-banner img { height: min(20vw, 30vh); max-height: 380px; object-fit: cover; object-position: center 20%; }
+  .hero-intro { padding: 24px 24px 36px; }
+  .hero-intro h1 { font-size: clamp(2.4rem, 7vh, 3.4rem); margin-bottom: 8px; }
+  .hero-intro p.hero-sub { margin: 4px auto 18px; }
 }
 </style>
 </head>
