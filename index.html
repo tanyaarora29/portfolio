@@ -246,6 +246,20 @@
   .hero-intro p.hero-sub { margin: 2px auto 16px; }
   .entry { padding: 14px 24px; gap: 24px; margin-bottom: 14px; }
   .logo-badge { width: 105px; height: 105px; border-radius: 18px; }
+ @media (min-width: 1600px) {
+  html { font-size: 112.5%; }
+  section, .alt-bg .inner { max-width: 1200px; }
+  .hero-banner img { height: min(23vw, 52vh); }
+  .photo {
+    width: min(18vw, 36vh, 520px);
+    height: min(18vw, 36vh, 520px);
+    margin: calc(min(18vw, 36vh, 520px) * -0.62) auto 10px;
+  }
+}
+@media (min-width: 2200px) {
+  html { font-size: 125%; }
+  section, .alt-bg .inner { max-width: 1400px; }
+}
 }
 }
 </style>
