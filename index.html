@@ -151,7 +151,7 @@
 
     /* hero: tighter, with the title split on two lines */
     .hero-intro { padding: 16px 20px 36px; }
-    .photo { width: 136px; height: 136px; margin: -46px auto 20px; border-width: 6px; }
+    .photo { width: 136px; height: 136px; margin: -40px auto 20px; border-width: 6px; }
     .hero-intro .eyebrow { font-size: max(0.7rem, 10px); letter-spacing: 1.5px; margin-bottom: 12px; }
     .hero-intro h1 { font-size: 2.6rem; margin-bottom: 8px; }
     .hero-intro p.hero-lead { font-size: 1.25rem; }
@@ -234,14 +234,15 @@
   }
 @media (min-width: 641px) {
   .photo {
-    width: min(19vw, 400px);
-    height: min(19vw, 400px);
-    margin: calc(min(19vw, 400px) * -0.5) auto 12px;
+    width: min(16vw, 400px);
+    height: min(16vw, 400px);
+    margin: calc(min(16vw, 400px) * -0.5) auto 10px;
   }
+  .hero-banner img { height: 21vw; object-fit: cover; object-position: center 50%; }
   nav { padding: 12px 40px; }
+  .hero-intro { padding: 32px 24px 40px; }
   .hero-intro h1 { font-size: 2.9rem; margin-bottom: 6px; }
   .hero-intro p.hero-sub { margin: 2px auto 16px; }
-  .hero-intro { padding-bottom: 40px; }
 }
 </style>
 </head>
